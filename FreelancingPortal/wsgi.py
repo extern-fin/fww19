@@ -1,5 +1,5 @@
 """
-WSGI config for IIITSFreelancingPortal project.
+WSGI config for FreelancingPortal project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -12,6 +12,6 @@ import os
 from django.core.wsgi import get_wsgi_application
 from dj_static import Cling
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'IIITSFreelancingPortal.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'FreelancingPortal.settings')
 
 application = get_wsgi_application()
