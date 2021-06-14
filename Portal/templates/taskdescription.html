@@ -814,7 +814,7 @@
 {% if is_leader %}
 <script type="text/javascript">
 
-    console.log({{user_rating}})
+    console.log({user_rating})
 
     $('#back').click(function goBack() {
 		window.history.back();
@@ -836,7 +836,7 @@
             type: "POST",
             url: "{% url 'Portal:open_close_project' %}",
             contentType: "application/json",
-            data: JSON.stringify({ 'task_id': {{ task.id }}, 'current': btn.value }),
+            data: JSON.stringify({ 'task_id': { task_id }, 'current': btn.value }),
             success: function(data) {
                 btn = document.getElementById('open_close');
 
