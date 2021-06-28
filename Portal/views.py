@@ -106,7 +106,6 @@ def signup_user(request):
             password1 = request.POST['passwd1']
         phone_number = request.POST['phno']
         bio = request.POST['bio']
-        image = request.FILES['image']
         batchYear = request.POST['batch']
         gender = request.POST['gender']
         address = request.POST['address']
@@ -116,7 +115,7 @@ def signup_user(request):
         languages = request.POST.getlist('languages[]')
         user = User.objects.create_user(username=username, first_name=first_name, last_name=last_name, email=email,
                                         password=password1,is_superuser=int(auth))
-        cuser = CustomUser(user=user, phone_number=phone_number, image=image, bio=bio, batchYear=batchYear,
+        cuser = CustomUser(user=user, phone_number=phone_number, bio=bio, batchYear=batchYear,
                            gender=gender,address=address,skype_username=skype_id)
         user.save()
         cuser.save()
@@ -757,9 +756,6 @@ def user_profile(request, username):
         if request.method == "POST":
             bio = request.POST['bio']
             cuser.bio = bio
-            if request.FILES.get('image', None) is not None:
-                image = request.FILES['image']
-                cuser.image = image
             cuser.save()
             skills = request.POST.getlist('skills[]')
             languages = request.POST.getlist('languages[]')
