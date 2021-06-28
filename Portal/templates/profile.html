@@ -484,19 +484,20 @@
             You have no skills.
             {% endif %}
 		</div>
-		{% if request.user.is_authenticated %}
-			<br>
+{% if request.user.is_authenticated %}
+		<br>
+	{% endif %}
+	<div class="knownLanguages">
+		
+		{% if ulanguages %}
+		{% for language in ulanguages %}
+		<div class="langua">
+			{{language}}
+		</div>
+		{% endfor %}
 		{% endif %}
-        <div class="knownLanguages">
-            <b>Languages</b>
-            {% if ulanguages %}
-            {% for language in ulanguages %}
-            <div class="langua">
-                {{language}}
-            </div>
-            {% endfor %}
-            {% endif %}
-        </div>
+
+		 </div>
 	</div>
 	{% if request.user.is_authenticated %}
 	{% if cuser.user.username == request.user.username %}
@@ -572,8 +573,9 @@
                     </div>
 				</div>
 				<br>
-				<b>Change your profile picture:</b><br>
-				<input type="file" id="myFile" name="image" value=""><br>
+				
+				
+				
                 <input type="submit" value="Save" name="submit">
             </form>
 
