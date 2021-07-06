@@ -486,7 +486,8 @@
     <div class="tskheader">
             <div class="innDesc" style="text-align: center;background-color: white">
                 <div id="appimg" style="overflow: hidden; text-align: center; background-color: #213875; padding: 10px;">
-                        <img id="lowa"src="/media/icons/to-do.png"/>
+                        <img id="lowa"src="{% static 'to-do.png' %}"/>
+                        
                 </div>
                 Task Description
                 <br><br>
@@ -497,7 +498,7 @@
 
             <div class="pta" style="text-align: center;background-color: white;margin: 5px;width: 25%">
                 <div id="appimg" style="overflow: hidden; text-align: center; background-color: #213875; padding: 10px;">
-                        <img id="lowa"src="/media/icons/deadline.png"/>
+                        <img id="lowa"src="{% static 'deadline.png' %}"/>
                 </div>
                 Deadline
                 <br><span style="padding-left: 10px;"></span><p style="color: black;">{{task.deadline}}</p>
@@ -505,7 +506,7 @@
 
             <div class="dead" style="text-align: center;background-color: white;margin: 5px;width: 25%">
                 <div id="appimg" style="overflow: hidden; text-align: center; background-color: #213875; padding: 10px;">
-                        <img id="lowa"src="/media/icons/alarm-clock.png"/>
+                        <img id="lowa"src="{% static 'alarm-clock.png' %}"/>
                 </div>
                 You are left with <br><br>
                 <div style="color: black;line-height: inherit; vertical-align: center;" id="deadTime" >
@@ -513,7 +514,7 @@
             </div>
             <div class="dead" style="text-align: center;background-color: white;margin: 5px;width: 25%">
                 <div id="appimg" style="overflow: hidden; text-align: center; background-color: #213875; padding: 10px;">
-                        <img id="lowa"src="/media/icons/give-money.png"/>
+                        <img id="lowa"src="{% static 'give-money.png' %}"/>
                 </div>
                 Credit <br><br>
                 <div style="color: black;line-height: inherit; vertical-align: center;">
