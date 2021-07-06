@@ -293,23 +293,7 @@ def applicable_jobs(cuser):
     return projects #jobs
 
 
-# def applicable_jobs(cuser):
-#     '''
-#     Use this function when using MySQL as a database
-#     '''
-#     cur = connection.cursor()
-#     if not cuser:
-#         id=0
-#     else:
-#         id=cuser.id
-#     cur.callproc('applicable_jobs', [id])
-#     results = cur.fetchall()
-#     cur.close()
-#     jobs = [Task(*row) for row in results]
-#     if jobs:
-#         jobs = [Task.objects.get(id=job.id) for job in jobs]
-#         sorted(jobs, key=lambda x: x.addedOn, reverse=True)
-#     return jobs
+
 
 
 @csrf_exempt
